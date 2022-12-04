@@ -25,12 +25,15 @@ public class BasketSpawner : MonoBehaviour
 
     public Basket lastBasket;
 
+    public List<GameObject> basketsList = new List<GameObject>();
+
     private float offsetX;
     public float offsetY { get; private set; }
 
     private void Start()
     {
         EventManager.OnBallInBasket += CreateNewBasket;
+        EventManager.OnGameEnded += DeleteBasket;
     }
 
     private void CreateNewBasket()
@@ -40,8 +43,33 @@ public class BasketSpawner : MonoBehaviour
         offsetX = Random.Range(minOffsetX, maxOffsetX);
         offsetY = Random.Range(minOffsetY, maxOffsetY);
 
-        Instantiate(basketPrefab,
+        var basket = Instantiate(basketPrefab,
             new Vector3(0 + offsetX, newBasketPosition.y + offsetY, 0),
             quaternion.identity);
+        basketsList.Add(basket);
+        
+        DeleteBasket();
+    }
+
+    private void DeleteBasket()
+    {
+        if (basketsList.Count % 3 == 0)
+        {
+            basketsList[0].GetComponent<Basket>().DestroyThisBasket();
+            basketsList.RemoveAt(0);
+        }
+    }
+
+    private void DeleteAllBaskets()
+    {
+        for (int i = 0; i < basketsList.Count; i++)
+        {
+            Destroy(basketsList[i]);
+        }
+    }
+
+    private void CreateFirstBasket()
+    {
+        
     }
 }

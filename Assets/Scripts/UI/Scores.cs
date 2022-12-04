@@ -11,7 +11,6 @@ public class Scores : MonoBehaviour
 
     private void Start()
     {
-        UpdateScoresCount();
         EventManager.OnBallInBasket += UpdateScoresCount;
     }
 
