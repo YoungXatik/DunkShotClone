@@ -27,6 +27,7 @@ public class Basket : MonoBehaviour
             ball = other.gameObject.GetComponent<Ball>();
             if (_collided)
             {
+                GameController.Instance.canShoot = true;
                 return;
             }
             else

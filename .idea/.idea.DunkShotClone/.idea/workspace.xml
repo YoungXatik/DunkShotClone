@@ -26,16 +26,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controls/GameController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Ball/Ball.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/WallsController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/LockCameraZ.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/Trajectory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Basket/Basket.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Scores.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Events/EventManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Basket/BasketSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/EventManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Scores.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Basket/Basket.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/DeathZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ball/Ball.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controls/GameController.cs" />
       </list>
     </option>
   </component>
@@ -78,6 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670151393278</updated>
       <workItem from="1670151441228" duration="14299000" />
+      <workItem from="1670185378015" duration="3932000" />
     </task>
     <servers />
   </component>

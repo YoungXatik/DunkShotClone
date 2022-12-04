@@ -26,29 +26,35 @@ public class GameController : MonoBehaviour
     private Vector2 force;
     private float distance;
 
+    public bool canShoot;
+
     private void Start()
     {
         _camera = Camera.main;
         ball.DeactivateRb();
+        canShoot = true;
+
+        EventManager.OnBallInBasket += AllowBallShoot;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            _isDragging = true;
-            OnDragStart();
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            _isDragging = false;
-            OnEndDrag();
-        }
-
-        if (_isDragging)
-        {
-            OnDrag();
+        if (canShoot)
+        { 
+            if (Input.GetMouseButtonDown(0))
+            { 
+                _isDragging = true;
+                OnDragStart();
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                _isDragging = false;
+                OnEndDrag();
+            }
+            if (_isDragging)
+            {
+                OnDrag();
+            }
         }
     }
 
@@ -73,5 +79,14 @@ public class GameController : MonoBehaviour
         ball.ActivateRb();
         ball.Push(force);
         trajectory.HideTrajectory();
+        canShoot = false;
     }
+
+    private void AllowBallShoot()
+    {
+        canShoot = true;
+    }
+    
+    
+    
 }

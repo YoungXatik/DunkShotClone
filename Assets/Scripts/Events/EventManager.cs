@@ -9,6 +9,8 @@ public class EventManager : MonoBehaviour
 
     public static Action OnGameEnded;
 
+    public static Action OnGameRestart;
+
     public static void OnBallInBasketInvoke()
     {
         OnBallInBasket?.Invoke();
@@ -17,5 +19,10 @@ public class EventManager : MonoBehaviour
     public static void OnGameEndedInvoke()
     {
         OnGameEnded?.Invoke();
+    }
+
+    public static void OnGameRestartInvoke()
+    {
+        OnGameRestart?.Invoke();
     }
 }
