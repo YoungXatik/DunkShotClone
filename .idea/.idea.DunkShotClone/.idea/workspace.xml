@@ -26,16 +26,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controls/WallsController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/LockCameraZ.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/Trajectory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Basket/BasketSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Events/EventManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Scores.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Basket/Basket.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controls/DeathZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ball/Ball.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/LockCameraZ.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controls/WallsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Basket/BasketSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/BallSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/EventManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Basket/Basket.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ColorController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controls/DeathZone.cs" />
       </list>
     </option>
   </component>
@@ -79,6 +82,7 @@
       <updated>1670151393278</updated>
       <workItem from="1670151441228" duration="14299000" />
       <workItem from="1670185378015" duration="3932000" />
+      <workItem from="1670231376035" duration="11057000" />
     </task>
     <servers />
   </component>
@@ -86,5 +90,11 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1670234263051">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1670234263051" />
   </component>
 </project>

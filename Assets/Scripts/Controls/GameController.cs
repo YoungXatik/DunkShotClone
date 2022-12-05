@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
 
     private Camera _camera;
     [SerializeField] private Ball ball;
-    [SerializeField] private Trajectory trajectory;
+    [field: SerializeField] public Trajectory trajectory { get; private set; }
     [SerializeField] private float pushForce;
 
     private bool _isDragging;
@@ -35,6 +35,19 @@ public class GameController : MonoBehaviour
         canShoot = true;
 
         EventManager.OnBallInBasket += AllowBallShoot;
+        EventManager.OnGameEnded += DeactivateShooting;
+        EventManager.OnGameRestart += ActivateShooting;
+        EventManager.OnGameRestart += BallOnRestart;
+    }
+
+    private void DeactivateShooting()
+    {
+        this.enabled = false;
+    }
+
+    private void ActivateShooting()
+    {
+        this.enabled = true;
     }
 
     private void Update()
@@ -86,7 +99,15 @@ public class GameController : MonoBehaviour
     {
         canShoot = true;
     }
-    
-    
+
+    private void BallOnRestart()
+    {
+        ball.DeactivateRb();
+        endPoint = Vector2.zero;
+        startPoint = Vector2.zero;
+        force = Vector2.zero;
+        direction = Vector2.zero;
+        AllowBallShoot();
+    }
     
 }

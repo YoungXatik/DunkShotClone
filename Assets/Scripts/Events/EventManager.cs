@@ -11,6 +11,8 @@ public class EventManager : MonoBehaviour
 
     public static Action OnGameRestart;
 
+    public static Action OnColorChanged;
+
     public static void OnBallInBasketInvoke()
     {
         OnBallInBasket?.Invoke();
@@ -24,5 +26,10 @@ public class EventManager : MonoBehaviour
     public static void OnGameRestartInvoke()
     {
         OnGameRestart?.Invoke();
+    }
+
+    public static void OnColorChangedInvoke()
+    {
+        OnColorChanged?.Invoke();
     }
 }

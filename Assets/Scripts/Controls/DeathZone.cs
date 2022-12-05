@@ -1,18 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
-    [SerializeField] private GameObject deathScreen;
 
     [SerializeField] private Transform playerObject;
     [SerializeField] private Vector2 playerStartPosition;
 
-    [SerializeField] private Animator deathScreenAnimator;
+    [SerializeField] private GameObject deathScreen;
     [SerializeField] private TextMeshProUGUI reachedScoresText;
+    [SerializeField] private TextMeshProUGUI defeatText;
+    [SerializeField] private GameObject restartButton;
 
     private LockCameraZ _mainCameraFollowComponent;
 
@@ -34,25 +36,40 @@ public class DeathZone : MonoBehaviour
     private void EndGame()
     {
         deathScreen.SetActive(true);
-        EventManager.OnGameEndedInvoke();
-        _mainCameraFollowComponent.enabled = false;
         StartAnimation();
+        EventManager.OnGameEndedInvoke();
         reachedScoresText.text = $"YOU REACHED {PlayerPrefs.GetInt("Scores")} SCORES";
     }
 
     [ContextMenu("TestAnimation")]
     private void StartAnimation()
     {
-        deathScreenAnimator.SetBool("idle",false);
-        deathScreenAnimator.SetBool("open",true);
+        restartButton.SetActive(true);
+        deathScreen.transform.DOScale(1, 0.3f).SetEase(Ease.Linear).From(0);
+        reachedScoresText
+            .DOColor(new Color(reachedScoresText.color.r, reachedScoresText.color.g, reachedScoresText.color.b, 1),
+                0.3f).SetEase(Ease.Linear);
+        defeatText.DOColor(new Color(defeatText.color.r, defeatText.color.g, defeatText.color.b, 1), 0.3f)
+            .SetEase(Ease.Linear);
+        _mainCameraFollowComponent.ball = null;
     }
 
     public void RestartGame()
     {
-        EventManager.OnGameRestart();
-        deathScreenAnimator.SetBool("open",false);
-        deathScreenAnimator.SetBool("idle",true);
+        EventManager.OnGameRestartInvoke();
+        EndAnimation();
         playerObject.position = playerStartPosition;
-        _mainCameraFollowComponent.enabled = true;
+        _mainCameraFollowComponent.ball = playerObject;
+    }
+
+    private void EndAnimation()
+    {
+        restartButton.SetActive(false);
+        deathScreen.transform.DOScale(0, 0.3f).SetEase(Ease.Linear).From(1);
+        reachedScoresText
+            .DOColor(new Color(reachedScoresText.color.r, reachedScoresText.color.g, reachedScoresText.color.b, 0),
+                0.3f).SetEase(Ease.Linear);
+        defeatText.DOColor(new Color(defeatText.color.r, defeatText.color.g, defeatText.color.b, 0), 0.3f)
+            .SetEase(Ease.Linear);
     }
 }

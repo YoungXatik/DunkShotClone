@@ -21,6 +21,7 @@ public class BasketSpawner : MonoBehaviour
     [SerializeField] private GameObject basketPrefab;
 
     [SerializeField] private Vector3 newBasketPosition;
+    [SerializeField] private Vector3 restartBasketPosition;
     [SerializeField] private float minOffsetX,maxOffsetX,minOffsetY, maxOffsetY;
 
     public Basket lastBasket;
@@ -33,7 +34,8 @@ public class BasketSpawner : MonoBehaviour
     private void Start()
     {
         EventManager.OnBallInBasket += CreateNewBasket;
-        EventManager.OnGameEnded += DeleteBasket;
+        EventManager.OnGameEnded += DeleteAllBaskets;
+        EventManager.OnGameRestart += CreateFirstBasket;
     }
 
     private void CreateNewBasket()
@@ -53,7 +55,7 @@ public class BasketSpawner : MonoBehaviour
 
     private void DeleteBasket()
     {
-        if (basketsList.Count % 3 == 0)
+        if (basketsList.Count > 3)
         {
             basketsList[0].GetComponent<Basket>().DestroyThisBasket();
             basketsList.RemoveAt(0);
@@ -66,10 +68,14 @@ public class BasketSpawner : MonoBehaviour
         {
             Destroy(basketsList[i]);
         }
+        basketsList.Clear();
     }
 
     private void CreateFirstBasket()
     {
-        
+        var basket = Instantiate(basketPrefab,
+            new Vector3(restartBasketPosition.x, restartBasketPosition.y, restartBasketPosition.z),
+            quaternion.identity);
+        basketsList.Add(basket);
     }
 }

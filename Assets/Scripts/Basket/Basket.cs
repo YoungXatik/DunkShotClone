@@ -8,15 +8,19 @@ using Random = UnityEngine.Random;
 
 public class Basket : MonoBehaviour
 {
-    private bool _collided;
+    public bool _collided;
 
     [SerializeField] private GameObject popup;
     [SerializeField] private TextMeshProUGUI popupText;
+    [SerializeField] private float popupDelay;
     public List<string> popupTexts = new List<string>();
-    
+
+    [SerializeField] private ParticleSystem hitParticle;
+
     private void Start()
     {
         transform.DOScale(1, 0.25f).From(0);
+        EventManager.OnColorChanged += ChangePopupTextColor;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -33,22 +37,37 @@ public class Basket : MonoBehaviour
             else
             {
                 BasketSpawner.Instance.lastBasket = this;
+                hitParticle.Play();
                 EventManager.OnBallInBasketInvoke();
-                ShowPopup();
+                StartCoroutine(ShowAndHidePopup());
                 _collided = true;
             }
         }
     }
 
-    private void ShowPopup()
+    private void ChangePopupTextColor()
     {
-        popup.SetActive(true);
+        popupText.DOColor(
+            new Color(ColorController.Instance.currentTextColor.r, ColorController.Instance.currentTextColor.g,
+                ColorController.Instance.currentTextColor.b, popupText.color.a), 0.3f);
+    }
+    
+    private IEnumerator ShowAndHidePopup()
+    {
+        popupText.transform.DOScale(1, 0.5f).SetEase(Ease.Linear).From(0);
         popupText.text = $"{popupTexts[Random.Range(0, popupTexts.Count)]}";
+        yield return new WaitForSeconds(popupDelay);
+        HidePopup();
     }
     
     public void DestroyThisBasket()
     {
         transform.DOScale(0, 0.5f).From(1).OnComplete(Destroy);
+    }
+
+    public void HidePopup()
+    {
+        popupText.transform.DOScale(0, 0.25f).SetEase(Ease.Linear).From(1);
     }
 
     private void Destroy()
