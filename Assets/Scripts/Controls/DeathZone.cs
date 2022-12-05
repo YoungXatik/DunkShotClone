@@ -18,10 +18,14 @@ public class DeathZone : MonoBehaviour
 
     private LockCameraZ _mainCameraFollowComponent;
 
+    private AudioSource _source;
+    [SerializeField] private AudioClip clip;
+
     private void Start()
     {
         deathScreen.SetActive(false);
         _mainCameraFollowComponent = Camera.main.gameObject.GetComponent<LockCameraZ>();
+        _source = FindObjectOfType<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,6 +39,7 @@ public class DeathZone : MonoBehaviour
 
     private void EndGame()
     {
+        _source.PlayOneShot(clip);
         deathScreen.SetActive(true);
         StartAnimation();
         EventManager.OnGameEndedInvoke();

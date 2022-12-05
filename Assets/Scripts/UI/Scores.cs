@@ -9,6 +9,8 @@ public class Scores : MonoBehaviour
     [SerializeField] private int scoresCount = 0;
     [SerializeField] private TextMeshProUGUI scoresText;
 
+    [SerializeField] private Ball ball;
+
     private void Start()
     {
         EventManager.OnBallInBasket += UpdateScoresCount;
@@ -19,6 +21,10 @@ public class Scores : MonoBehaviour
     private void UpdateScoresCount()
     {
         scoresCount += 1;
+        if (scoresCount >= 10)
+        {
+            ball.ActivateTrail();
+        }
         PlayerPrefs.SetInt("Scores", scoresCount);
         scoresText.text = scoresCount.ToString();
     }

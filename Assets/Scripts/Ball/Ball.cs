@@ -10,6 +10,8 @@ public class Ball : MonoBehaviour
 
     public Vector3 ballPosition { get; private set; }
 
+    [SerializeField] private GameObject trail;
+
     private void Awake()
     {
         _ballCollider = GetComponent<CircleCollider2D>();
@@ -33,5 +35,10 @@ public class Ball : MonoBehaviour
         _ballRigidbody.velocity = Vector3.zero;
         _ballRigidbody.angularVelocity = 0f;
         _ballRigidbody.isKinematic = true;
+    }
+
+    public void ActivateTrail()
+    {
+        trail.SetActive(true);
     }
 }

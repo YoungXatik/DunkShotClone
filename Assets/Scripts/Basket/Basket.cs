@@ -17,10 +17,14 @@ public class Basket : MonoBehaviour
 
     [SerializeField] private ParticleSystem hitParticle;
 
+    private AudioSource _source;
+    [SerializeField] private AudioClip clip;
+
     private void Start()
     {
         transform.DOScale(1, 0.25f).From(0);
         EventManager.OnColorChanged += ChangePopupTextColor;
+        _source = FindObjectOfType<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -38,6 +42,7 @@ public class Basket : MonoBehaviour
             {
                 BasketSpawner.Instance.lastBasket = this;
                 hitParticle.Play();
+                _source.PlayOneShot(clip);
                 EventManager.OnBallInBasketInvoke();
                 StartCoroutine(ShowAndHidePopup());
                 _collided = true;

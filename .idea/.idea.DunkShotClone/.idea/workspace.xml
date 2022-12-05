@@ -14,6 +14,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Basket/BasketSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controls/WallsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Basket/Basket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/OnButtonClick.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../MonsterCarCrashClone/Assets/Scripts/Grid/BuildingGrid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/LockCameraZ.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Scores.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.17/Runtime/Core/CinemachineExtension.cs" root0="SKIP_HIGHLIGHTING" />
@@ -35,9 +37,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/BallSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Events/EventManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Basket/Basket.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ColorController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/OnButtonClick.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Basket/Basket.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/DeathZone.cs" />
       </list>
     </option>
@@ -82,7 +85,7 @@
       <updated>1670151393278</updated>
       <workItem from="1670151441228" duration="14299000" />
       <workItem from="1670185378015" duration="3932000" />
-      <workItem from="1670231376035" duration="11057000" />
+      <workItem from="1670231376035" duration="12765000" />
     </task>
     <servers />
   </component>

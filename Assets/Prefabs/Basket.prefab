@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1296474306533110682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_Children: []
   m_Father: {fileID: 7882330886824186575}
   m_RootOrder: 0
@@ -380,15 +380,21 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.5011796, y: 0.35771275}
-      - {x: -0.5742836, y: 0.3936028}
+      - {x: -0.7000784, y: 0.5098829}
+      - {x: -0.76302135, y: 0.55222285}
+      - {x: -0.76569635, y: 0.44448596}
+      - {x: -0.6566574, y: 0.4539939}
       - {x: -0.5763207, y: 0.3326224}
-      - {x: -0.49627185, y: 0.33580315}
-      - {x: -0.36420035, y: 0.14125064}
-      - {x: -0.3030374, y: -0.07106632}
-      - {x: -0.2842586, y: -0.1268971}
+      - {x: -0.50631106, y: 0.23942643}
+      - {x: -0.4123887, y: 0.03885039}
+      - {x: -0.36327285, y: -0.19756076}
+      - {x: -0.38302472, y: -0.5163204}
+      - {x: 0.009163737, y: -0.5412022}
+      - {x: -0.27823505, y: -0.51240396}
+      - {x: -0.2924729, y: -0.30736518}
       - {x: -0.2682625, y: -0.13804853}
       - {x: -0.27526084, y: -0.30340892}
-      - {x: -0.28732705, y: -0.38652313}
+      - {x: -0.17087187, y: -0.40459374}
       - {x: 0.012859136, y: -0.36697778}
       - {x: -0.015531484, y: -0.09900199}
       - {x: -0.29279494, y: 0.017321758}
@@ -419,19 +425,22 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.5754454, y: 0.37890115}
-      - {x: 0.46699312, y: 0.33141983}
-      - {x: 0.3911785, y: 0.21092875}
-      - {x: 0.3287159, y: 0.1002816}
+    - - {x: 0.66693234, y: 0.45078546}
+      - {x: 0.76158345, y: 0.450681}
+      - {x: 0.76214594, y: 0.55168605}
+      - {x: 0.68989277, y: 0.5254741}
+      - {x: 0.49510297, y: 0.3053178}
+      - {x: 0.41928834, y: 0.16876394}
+      - {x: 0.3628493, y: 0.025991216}
       - {x: 0.28894112, y: -0.03143773}
       - {x: 0.27272964, y: -0.13751021}
       - {x: 0.28421754, y: -0.0159588}
       - {x: -0.016015578, y: -0.10311842}
-      - {x: 0.016439829, y: -0.36202866}
-      - {x: 0.28617126, y: -0.38830367}
-      - {x: 0.27016282, y: -0.16005705}
-      - {x: 0.3387134, y: 0.05465006}
-      - {x: 0.45116198, y: 0.27963328}
+      - {x: 0.01242413, y: -0.54875857}
+      - {x: 0.38054013, y: -0.49873534}
+      - {x: 0.36252385, y: -0.18013555}
+      - {x: 0.39091745, y: -0.017632477}
+      - {x: 0.4531698, y: 0.16317807}
       - {x: 0.575166, y: 0.3312661}
 --- !u!61 &4112931885155289358
 BoxCollider2D:
@@ -446,7 +455,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.006438315, y: -0.11}
+  m_Offset: {x: -0.0036009103, y: -0.0808862}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -457,7 +466,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48923624, y: 0.42485452}
+  m_Size: {x: 0.5655345, y: 0.48308215}
   m_EdgeRadius: 0
 --- !u!114 &3898716165198251298
 MonoBehaviour:
@@ -482,6 +491,7 @@ MonoBehaviour:
   - WONDERFUL
   - Perfect
   hitParticle: {fileID: 1170033790946428060}
+  clip: {fileID: 8300000, guid: b9efecae9fd8f2e4cbf768658355b5c6, type: 3}
 --- !u!1001 &884794525868507458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -541,7 +551,9 @@ PrefabInstance:
       propertyPath: stopAction
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7153149266754122869, guid: 7f1a6ac06fc964b40a408d07318bd435, type: 3}
+    - {fileID: 7153149266765084207, guid: 7f1a6ac06fc964b40a408d07318bd435, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7f1a6ac06fc964b40a408d07318bd435, type: 3}
 --- !u!4 &7999093005447404759 stripped
 Transform:
@@ -555,6 +567,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7882330886824186575}
     m_Modifications:
+    - target: {fileID: 4439943678309696183, guid: dc6cc00470cf8674cac4c7d83c21b12b, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439943678309696183, guid: dc6cc00470cf8674cac4c7d83c21b12b, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439943678323557449, guid: dc6cc00470cf8674cac4c7d83c21b12b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4439943678324671815, guid: dc6cc00470cf8674cac4c7d83c21b12b, type: 3}
       propertyPath: m_Name
       value: ExplosionFireballBlue
@@ -603,7 +627,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4439943678323557449, guid: dc6cc00470cf8674cac4c7d83c21b12b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dc6cc00470cf8674cac4c7d83c21b12b, type: 3}
 --- !u!4 &1170033790965838864 stripped
 Transform:
